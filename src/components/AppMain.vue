@@ -1,23 +1,23 @@
 <script>
 import axios from 'axios';
 import MainSelect from './MainSelect.vue';
+import MainCardContainer from './MainCardContainer.vue';
 import { store } from '../store';
 export default {
     name: 'AppMain',
     components: {
         MainSelect,
+        MainCardContainer,
     },
     data() {
         return {
             store,
-            cards: [],
-            apiURL: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=39&offset=0',
         };
     },
     created() {
-        axios.get(this.apiURL)
+        axios.get(store.apiURL)
             .then((response) => {
-                this.cards = response.data.data;
+                store.cards = response.data.data; // insert results into cards array
             })
     },
 };
@@ -26,11 +26,7 @@ export default {
 <template>
     <main class="app-main">
         <div class="container">
-            <MainSelect />
-            <div>
-                {{ cards }}
-
-            </div>
+            <MainCardContainer />
         </div>
     </main>
 </template>
@@ -38,6 +34,6 @@ export default {
 <style scoped lang="scss">
 .app-main {
     background-color: #d48f38;
-    height: 100vh;
+    min-height: 100vh;
 }
 </style>
