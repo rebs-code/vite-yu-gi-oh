@@ -1,17 +1,22 @@
 <script>
-export default {
-  name: 'DefaultTemplate',
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
-  data() {
-    return {
-      text: 'Template VueJS',
-    };
+export default {
+  name: 'App',
+  components: {
+    AppHeader,
+    AppMain,
   },
+
 };
 </script>
 
 <template>
-  <h1>Hello</h1>
+  <div id="app">
+    <AppHeader />
+    <AppMain />
+  </div>
 </template>
 
 <style scoped lang="scss"></style>
