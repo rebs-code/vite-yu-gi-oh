@@ -36,7 +36,6 @@ export default {
 
 .card-container {
     background-color: white;
-    // justify-content: space-between;
 }
 
 .found-component {
