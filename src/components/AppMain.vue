@@ -1,5 +1,20 @@
-<script></script>
+<script>
+export default {
+    name: 'AppMain',
+};
+</script>
 
-<template></template>
+<template>
+    <main class="app-main">
+        <div class="container">
 
-<style scoped lang="scss"></style>
+        </div>
+    </main>
+</template>
+
+<style scoped lang="scss">
+.app-main {
+    background-color: #d48f38;
+    height: 100vh;
+}
+</style>
