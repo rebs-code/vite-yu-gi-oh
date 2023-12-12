@@ -18,6 +18,7 @@ export default {
     background-color: black;
     color: white;
     width: 100%;
+    margin: 0 10px;
 
     h3 {
         padding: 1rem;

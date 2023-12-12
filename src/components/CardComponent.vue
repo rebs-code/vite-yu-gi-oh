@@ -22,8 +22,10 @@ export default {
 @use "../assets/scss/partial/variables" as *;
 
 .card-div {
-    width: 190px;
+    width: calc(100% / 5 - 20px);
     background-color: $primary-color;
+    margin-right: 10px;
+    margin-left: 10px;
 
     .card-img-top {
         object-fit: cover;

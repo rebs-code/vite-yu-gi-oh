@@ -31,11 +31,12 @@ export default {
 <style scoped lang="scss">
 .main-container {
     background-color: white;
+
 }
 
 .card-container {
     background-color: white;
-    justify-content: space-between;
+    // justify-content: space-between;
 }
 
 .found-component {
