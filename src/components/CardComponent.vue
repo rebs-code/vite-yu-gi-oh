@@ -4,6 +4,7 @@ export default {
     props: {
         img: String,
         name: String,
+        archetype: String,
     },
 
 };
@@ -12,7 +13,7 @@ export default {
 <template>
     <div class="card-div">
         <img :src="img" class="card-img-top" alt="...">
-        <h5 class="card-name py-3">{{ name }}</h5>
+        <h5 class="card-name py-2">{{ name }}</h5>
         <p class="card-archetype">{{ archetype }}</p>
     </div>
 </template>
@@ -38,8 +39,7 @@ export default {
     }
 
     .card-archetype {
-        font-size: 1.2rem;
-        font-weight: bold;
+        font-size: 1rem;
         text-align: center;
     }
 }
