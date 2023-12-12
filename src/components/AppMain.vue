@@ -1,5 +1,4 @@
 <script>
-import axios from 'axios';
 import MainSelect from './MainSelect.vue';
 import MainCardContainer from './MainCardContainer.vue';
 import { store } from '../store';
@@ -13,12 +12,6 @@ export default {
         return {
             store,
         };
-    },
-    created() {
-        axios.get(store.apiURL)
-            .then((response) => {
-                store.cards = response.data.data; // insert results into cards array
-            })
     },
 };
 </script>

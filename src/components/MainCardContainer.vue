@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import { store } from '../store';
 import CardComponent from './CardComponent.vue';
 import MainSelect from './MainSelect.vue';
@@ -13,14 +14,23 @@ export default {
     data() {
         return {
             store,
+            isLoading: true,
         };
+    },
+    created() {
+        axios.get(store.apiURL)
+            .then((response) => {
+                store.cards = response.data.data; // insert results into cards array
+                this.isLoading = false;
+            })
     },
 };
 </script>
 
 <template>
     <div class="container main-container p-5">
-        <div class="card-container d-flex flex-wrap">
+        <div v-if="isLoading">Loading</div>
+        <div v-else class="card-container d-flex flex-wrap">
             <MainFoundComponent :length="store.cards.length" />
             <CardComponent v-for="card in store.cards" :img="card.card_images[0].image_url" :name="card.name"
                 :archetype="card.archetype" />
