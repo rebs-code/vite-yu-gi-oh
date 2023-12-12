@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-    <div class="card-div">
+    <div class="card-div mb-3">
         <img :src="img" class="card-img-top" alt="...">
         <h5 class="card-name py-2">{{ name }}</h5>
         <p class="card-archetype">{{ archetype }}</p>
@@ -22,7 +22,6 @@ export default {
 @use "../assets/scss/partial/variables" as *;
 
 .card-div {
-    height: 400px;
     width: 190px;
     background-color: $primary-color;
 

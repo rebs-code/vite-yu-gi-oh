@@ -2,11 +2,13 @@
 import { store } from '../store';
 import CardComponent from './CardComponent.vue';
 import MainSelect from './MainSelect.vue';
+import MainFoundComponent from './MainFoundComponent.vue';
 export default {
     name: 'MainCardContainer',
     components: {
         CardComponent,
         MainSelect,
+        MainFoundComponent,
     },
     data() {
         return {
@@ -20,8 +22,9 @@ export default {
     <div class="container">
         <MainSelect />
     </div>
-    <div class="d-flex justify-content-center">
-        <div class="card-container d-flex flex-wrap p-5 gap-3 container">
+    <div class="container main-container p-5">
+        <div class="card-container d-flex flex-wrap">
+            <MainFoundComponent :length="store.cards.length" />
             <CardComponent v-for="card in store.cards" :img="card.card_images[0].image_url" :name="card.name"
                 :archetype="card.archetype" />
         </div>
@@ -29,8 +32,16 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.card-container {
-
+.main-container {
     background-color: white;
+}
+
+.card-container {
+    background-color: white;
+    justify-content: space-between;
+}
+
+.found-component {
+    background-color: black;
 }
 </style>
