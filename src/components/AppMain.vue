@@ -25,12 +25,7 @@ export default {
 
 <template>
     <main class="app-main">
-        <div class="container">
-            <MainSelect />
-        </div>
-        <div class="container">
-            <MainCardContainer />
-        </div>
+        <MainCardContainer />
     </main>
 </template>
 
