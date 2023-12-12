@@ -15,9 +15,14 @@ export default {
 </script>
 
 <template>
-    <div class="card-container">
-        <CardComponent v-for="card in store.cards" />
+    <div class="card-container d-flex flex-wrap p-5 gap-3">
+        <CardComponent v-for="card in store.cards" :img="card.card_images[0].image_url" />
     </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.card-container {
+    justify-content: space-between;
+    background-color: white;
+}
+</style>

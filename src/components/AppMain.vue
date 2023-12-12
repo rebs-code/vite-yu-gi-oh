@@ -26,14 +26,19 @@ export default {
 <template>
     <main class="app-main">
         <div class="container">
+            <MainSelect />
+        </div>
+        <div class="container">
             <MainCardContainer />
         </div>
     </main>
 </template>
 
 <style scoped lang="scss">
+@use "../assets/scss/partial/variables" as *;
+
 .app-main {
-    background-color: #d48f38;
+    background-color: $primary-color;
     min-height: 100vh;
 }
 </style>
