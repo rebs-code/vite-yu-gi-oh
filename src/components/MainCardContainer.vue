@@ -19,9 +19,6 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <MainSelect />
-    </div>
     <div class="container main-container p-5">
         <div class="card-container d-flex flex-wrap">
             <MainFoundComponent :length="store.cards.length" />
