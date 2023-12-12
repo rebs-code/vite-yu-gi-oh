@@ -16,7 +16,7 @@ export default {
 
 <template>
     <div class="card-container d-flex flex-wrap p-5 gap-3">
-        <CardComponent v-for="card in store.cards" :img="card.card_images[0].image_url" />
+        <CardComponent v-for="card in store.cards" :img="card.card_images[0].image_url" :name="card.name" />
     </div>
 </template>
 
