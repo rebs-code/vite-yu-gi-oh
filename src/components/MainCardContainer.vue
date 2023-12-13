@@ -18,10 +18,16 @@ export default {
         };
     },
     created() {
-        axios.get(store.apiURL)
+        //call api to get cards
+        axios.get(this.store.apiYuGiOh.defaultURL + this.store.apiYuGiOh.cardInfo + '?num=60&offset=0')
             .then((response) => {
-                store.cards = response.data.data; // insert results into cards array
+                this.store.cards = response.data.data; // insert results into cards array
                 this.isLoading = false;
+            })
+        //call api to get archetypes
+        axios.get(this.store.apiYuGiOh.defaultURL + this.store.apiYuGiOh.archetypes)
+            .then((response) => {
+                this.store.archetypes = response.data;
             })
     },
 };
