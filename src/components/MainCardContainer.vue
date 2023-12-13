@@ -1,5 +1,4 @@
 <script>
-import axios from 'axios';
 import { store } from '../store';
 import CardComponent from './CardComponent.vue';
 import MainSelect from './MainSelect.vue';
@@ -17,26 +16,26 @@ export default {
             isLoading: true,
         };
     },
-    created() {
-        //call api to get cards
-        axios.get(this.store.apiYuGiOh.defaultURL + this.store.apiYuGiOh.cardInfo + '?num=60&offset=0')
-            .then((response) => {
-                this.store.cards = response.data.data; // insert results into cards array
-                this.isLoading = false;
-            })
-        //call api to get archetypes
-        axios.get(this.store.apiYuGiOh.defaultURL + this.store.apiYuGiOh.archetypes)
-            .then((response) => {
-                this.store.archetypes = response.data;
-            })
-    },
+    // created() {
+    //     //call api to get cards
+    //     axios.get(this.store.apiYuGiOh.defaultURL + this.store.apiYuGiOh.cardInfo + '?num=60&offset=0')
+    //         .then((response) => {
+    //             this.store.cards = response.data.data; // insert results into cards array
+    //             this.isLoading = false;
+    //         })
+    //     //call api to get archetypes
+    //     axios.get(this.store.apiYuGiOh.defaultURL + this.store.apiYuGiOh.archetypes)
+    //         .then((response) => {
+    //             this.store.archetypes = response.data;
+    //         })
+    // },
 };
 </script>
 
 <template>
     <div class="container main-container p-5">
-        <div v-if="isLoading">Loading</div>
-        <div v-else class="card-container d-flex flex-wrap">
+        <!-- <div v-if="isLoading">Loading</div> -->
+        <div class="card-container d-flex flex-wrap">
             <MainFoundComponent :length="store.cards.length" />
             <CardComponent v-for="card in store.cards" :img="card.card_images[0].image_url" :name="card.name"
                 :archetype="card.archetype" />
